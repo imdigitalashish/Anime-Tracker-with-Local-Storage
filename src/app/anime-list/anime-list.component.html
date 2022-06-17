@@ -1,0 +1,41 @@
+<div class="heading">
+
+    <h4 routerLink="myAnimeList" class="myListHeading" style="color: white;margin: 0 auto;width: fit-content; padding-top: 10px;cursor: pointer;">My Anime List</h4>
+    <h1 class="heading__title">Anime Tracker</h1>
+
+
+    <div style="display: flex; justify-content: center;">
+        <input [formControl]="searchAnime" class="heading__input" placeholder="Search your anime" type="text">
+    </div>
+
+
+
+</div>
+
+
+<div class="animeListContainer">
+    <div *ngFor="let a of this.animeService.animeList; index as i"
+        style="background-image: url('{{a.images.jpg.large_image_url}}');" class="card">
+
+        <div class="overLay">
+        </div>
+        <div class="card__content">
+            <h2>Rank: {{a.rank}}</h2>
+            <h2>Duration: {{a.duration}}</h2>
+            <h2>Episodes: {{a.episodes}}</h2>            
+        </div>
+
+
+
+        <button (click)="addToList(i)">Add To List</button>
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

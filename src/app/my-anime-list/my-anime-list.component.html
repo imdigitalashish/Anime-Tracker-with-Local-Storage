@@ -1,0 +1,29 @@
+<h1>My Anime List</h1>
+
+<div *ngFor="let a of this.myAnimeList.myAnimeList;index as i" class="card">
+    <div class="cardImage">
+        <img src="{{a.images.jpg.image_url}}" alt="">
+    </div>
+    <div class="cardTitle">
+        <p>{{a.title}}</p>
+    </div>
+    <div>
+        <div style="padding-right: 20px; width: 10%; padding-top: 50px;display: flex;">
+            <i (click)="incrementEpisode(i)" *ngIf="a.totalEpisodesWatched !== a.episodes"
+                class="fa-solid fa-circle-plus" style="color: orange;transform: scale(1.5);"></i>
+
+            <i (click)="decrementEpisode(i);" *ngIf="a.totalEpisodesWatched != 0   " class="fa-solid fa-circle-minus"
+                style="color: orange;transform: scale(1.5);margin-left: 20px;"></i>
+
+
+            <i (click)="deleteItem(i)" class="fa-solid fa-trash"  style="color: orange;transform: scale(1.5);margin-left: 20px;"></i>
+
+        </div>
+
+        <br>
+        <div style="padding-right: 12px">
+            <p>Progress</p>
+            <p>{{a.totalEpisodesWatched}}/{{a.episodes}}</p>
+        </div>
+    </div>
+</div>
