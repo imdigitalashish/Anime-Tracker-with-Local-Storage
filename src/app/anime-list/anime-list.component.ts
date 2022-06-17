@@ -17,7 +17,7 @@ export class AnimeListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.animeService.searchAnime("Naruto");
+    this.animeService.searchAnime("Dragon Ball Z");
   }
 
 
